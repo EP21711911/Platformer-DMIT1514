@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
+using System;
 
 namespace Platformer;
 
@@ -17,7 +18,6 @@ public class Platformer : Game
     private Player _player;
     private Collider _ground;
     private List<Platform> _platforms;
-
     private Texture2D _Background, _ForeGround;
     private SoundEffect _BarkSound, _Theme;
     private SoundEffectInstance _barkInstance, _themeInstance;
@@ -34,7 +34,6 @@ public class Platformer : Game
         _graphics.PreferredBackBufferWidth = _WindowWidth;
         _graphics.PreferredBackBufferHeight = _WindowHeight;
         _graphics.ApplyChanges();
-
         _gameBoundingBox = new Rectangle(0, 0, _WindowWidth, _WindowHeight);
         _player = new Player(new Vector2(200, 50), _gameBoundingBox);
         _ground = new TopCollider(new Vector2(0, 320), new Vector2(_WindowWidth, 1));
@@ -42,11 +41,11 @@ public class Platformer : Game
 
         _platforms = new List<Platform>
         {
-            new Platform(new Vector2(200, 200), new Vector2(50, 25), "Gold"),
-            new Platform(new Vector2(150, 150), new Vector2(50, 25), "Gold"),
-            new Platform(new Vector2(250, 200), new Vector2(50, 25), "Gold"),
-            new Platform(new Vector2(350, 250), new Vector2(50, 25), "Gold"),
-            new Platform(new Vector2(450, 300), new Vector2(50, 25), "Gold")
+            new Platform(new Vector2(200, 200), new Vector2(100, 25), "Gold"),
+            new Platform(new Vector2(50, 150), new Vector2(25, 25), "Gold"),
+            new Platform(new Vector2(350, 30), new Vector2(50, 25), "Gold"),
+            new Platform(new Vector2(350, 250), new Vector2(75, 25), "Gold"),
+            new Platform(new Vector2(450, 100), new Vector2(50, 25), "Gold")
         };
 
         base.Initialize();
@@ -102,8 +101,11 @@ public class Platformer : Game
 
         _player.Update(gameTime);
         _ground.ProcessCollisions(_player, gameTime);
-        foreach (var platform in _platforms)
+        foreach (Platform platform in _platforms)
+        {
+            platform.Update(gameTime);
             platform.ProcessCollisions(_player, gameTime);
+        }
 
         base.Update(gameTime);
     }

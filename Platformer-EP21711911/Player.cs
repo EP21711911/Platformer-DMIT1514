@@ -70,6 +70,15 @@ private const int _Speed = 150, _JumpForce = -100;
             case State.Walking:
                 break;
         }
+        // Wrap horizontally
+        if (_position.X + _dimensions.X < 0)
+        {
+            _position.X = _gameBoundingBox.Width;
+        }
+        else if (_position.X > _gameBoundingBox.Width)
+        {
+            _position.X = -_dimensions.X;
+        }
     }
     internal void Draw(SpriteBatch spriteBatch)
     {

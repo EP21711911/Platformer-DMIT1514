@@ -5,6 +5,7 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Attack.png</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Bone.png</File>
     <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Bricks.jpg</File>
     <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/ColliderBottom.png</File>
     <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/ColliderLeft.png</File>
@@ -23,6 +24,7 @@
     <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Walk.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

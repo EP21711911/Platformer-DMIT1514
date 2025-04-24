@@ -25,7 +25,10 @@ public abstract class Collider
     }
 
     public abstract bool ProcessCollisions(Player player, GameTime gameTime);
-
+    public void SetPosition(Vector2 newPosition)
+    {
+        _position = newPosition;
+    }
 }
 
 #region Children Colliders
