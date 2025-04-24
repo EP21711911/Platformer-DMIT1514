@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Attack.png</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Death.png</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/GoldenTiles.jpg</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Holy_Mission.mp3</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/holycity.jpg</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/HolyCity2.jpg</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Hurt.png</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Idle.png</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/soundscrate-animal-dog.mp3</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Walk.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File>holyMission.mp3</File>
+    <File xsi:nil="true" />
+    <File>RealHolyCity.jpg</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File>barkAttack.mp3</File>
+    <File>Walking.png</File>
+  </DestFiles>
+</SourceFileCollection>
