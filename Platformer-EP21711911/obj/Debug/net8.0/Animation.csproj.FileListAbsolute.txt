@@ -169,3 +169,8 @@ C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\obj\Debug\net8.0
 C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\obj\Debug\net8.0\Animation.pdb
 C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\obj\Debug\net8.0\Animation.genruntimeconfig.cache
 C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\obj\Debug\net8.0\ref\Animation.dll
+C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\bin\Debug\net8.0\Content\ColliderBottom.xnb
+C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\bin\Debug\net8.0\Content\ColliderLeft.xnb
+C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\bin\Debug\net8.0\Content\ColliderRight.xnb
+C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\bin\Debug\net8.0\Content\ColliderTop.xnb
+C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\bin\Debug\net8.0\Content\Jump.xnb

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 
-namespace Animation;
+namespace Platformer;
     
 /// <summary>
 /// Represents a cel animated texture.

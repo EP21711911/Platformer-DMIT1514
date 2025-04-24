@@ -1,2 +1,2 @@
-﻿using var game = new Animation.AnimationGame();
+﻿using var game = new Platformer.Platformer();
 game.Run();

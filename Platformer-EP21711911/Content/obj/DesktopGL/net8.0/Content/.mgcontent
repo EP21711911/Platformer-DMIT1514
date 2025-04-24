@@ -5,6 +5,10 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Attack.png</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/ColliderBottom.png</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/ColliderLeft.png</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/ColliderRight.png</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/ColliderTop.png</File>
     <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Death.png</File>
     <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/GoldenTiles.jpg</File>
     <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Holy_Mission.mp3</File>
@@ -12,6 +16,7 @@
     <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/HolyCity2.jpg</File>
     <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Hurt.png</File>
     <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Idle.png</File>
+    <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Jump.png</File>
     <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/soundscrate-animal-dog.mp3</File>
     <File>C:/Users/yazid/GITHUB/Platformer-DMIT1514/Platformer-EP21711911/Content/Walk.png</File>
   </SourceFiles>
@@ -19,9 +24,14 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File>holyMission.mp3</File>
     <File xsi:nil="true" />
     <File>RealHolyCity.jpg</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>barkAttack.mp3</File>

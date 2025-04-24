@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Animation;
+namespace Platformer;
     
 /// <summary>
 /// Controls playback of a CelAnimationSequence.
