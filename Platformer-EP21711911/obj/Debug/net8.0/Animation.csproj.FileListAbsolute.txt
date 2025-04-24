@@ -174,3 +174,5 @@ C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\bin\Debug\net8.0
 C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\bin\Debug\net8.0\Content\ColliderRight.xnb
 C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\bin\Debug\net8.0\Content\ColliderTop.xnb
 C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\bin\Debug\net8.0\Content\Jump.xnb
+C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\bin\Debug\net8.0\Content\Bricks.xnb
+C:\Users\yazid\GITHUB\Platformer-DMIT1514\Platformer-EP21711911\bin\Debug\net8.0\Content\Gold.xnb

@@ -4,83 +4,121 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Platformer;
 
-public class Collider
+public abstract class Collider
 {
-    public enum ColliderType { Left, Right, Top, Bottom }
-    private ColliderType _type;
-    private Vector2 _position, _dimensions;
-    private Texture2D _texture;
-    internal Rectangle BoundingBox
-    {
-        get
-        {
-            return new Rectangle((int)_position.X, (int)_position.Y, (int)_dimensions.X, (int)_dimensions.Y);
-        }
-    }
-    public Collider(Vector2 position, Vector2 dimensions, ColliderType colliderType)
+    protected Vector2 _position, _dimensions;
+    protected Texture2D _texture;
+
+    public Rectangle BoundingBox => new Rectangle((int)_position.X, (int)_position.Y, (int)_dimensions.X, (int)_dimensions.Y);
+
+    protected Collider(Vector2 position, Vector2 dimensions)
     {
         _position = position;
         _dimensions = dimensions;
-        _type = colliderType;
     }
-    internal void LoadContent(ContentManager contentManager) 
-    {
-        string textureName = "";
-        switch(_type)
-        {
-            case ColliderType.Left:
-                textureName = "ColliderLeft";
-                break;
-            case ColliderType.Right:
-                textureName = "ColliderRight";
-                break;
-            case ColliderType.Top:
-                textureName = "ColliderTop";
-                break;
-            case ColliderType.Bottom:
-                textureName = "ColliderBottom";
-                break;
-        }
-        _texture = contentManager.Load<Texture2D>(textureName);
-    }
-    internal void Draw(SpriteBatch spriteBatch)
+
+    public abstract void LoadContent(ContentManager content); // abstract instead
+
+    public void Draw(SpriteBatch spriteBatch)
     {
         spriteBatch.Draw(_texture, BoundingBox, new Rectangle(0, 0, 1, 1), Color.White);
     }
-    internal bool ProcessCollision(Player player, GameTime gameTime)
+
+    public abstract bool ProcessCollisions(Player player, GameTime gameTime);
+
+}
+
+#region Children Colliders
+public class TopCollider : Collider
+{
+    public TopCollider(Vector2 position, Vector2 dimensions)
+        : base(position, dimensions) { }
+
+    public override void LoadContent(ContentManager content)
     {
-        bool didCollide = false;
-        if(BoundingBox.Intersects(player.BoundingBox))
+        _texture = content.Load<Texture2D>("ColliderTop");
+    }
+
+    public override bool ProcessCollisions(Player player, GameTime gameTime)
+    {
+        if (!BoundingBox.Intersects(player.BoundingBox)) return false;
+
+        if (player.Velocity.Y > 0)
         {
-            didCollide = true;
-            switch(_type)
-            {
-                case ColliderType.Left:
-                    //if the player is moving rightwards
-                    if(player.Velocity.X > 0)
-                    {
-                        player.MoveHorizontally(0);
-                    }
-                    break;
-                case ColliderType.Right:
-                    //if the player is moving leftwards
-                    if(player.Velocity.X < 0)
-                    {
-                        player.MoveHorizontally(0);
-                    }
-                    break;
-                case ColliderType.Top:
-                    player.Land(BoundingBox);
-                    player.StandOn(gameTime);
-                    break;
-                case ColliderType.Bottom:
-                    if(player.Velocity.Y < 0)
-                    {
-                        player.MoveVertically(0);
-                    }
-                    break;
-            }
+            player.Land(BoundingBox);
+            player.StandOn(gameTime);
+            return true;
         }
-        return didCollide;
+        return false;
     }
 }
+
+public class BottomCollider : Collider
+{
+    public BottomCollider(Vector2 position, Vector2 dimensions)
+        : base(position, dimensions) { }
+
+    public override void LoadContent(ContentManager content)
+    {
+        _texture = content.Load<Texture2D>("ColliderBottom");
+    }
+
+    public override bool ProcessCollisions(Player player, GameTime gameTime)
+    {
+        if (!BoundingBox.Intersects(player.BoundingBox)) return false;
+
+        if (player.Velocity.Y < 0)
+        {
+            player.MoveVertically(0);
+            return true;
+        }
+        return false;
+    }
+}
+
+public class LeftCollider : Collider
+{
+    public LeftCollider(Vector2 position, Vector2 dimensions)
+        : base(position, dimensions) { }
+
+    public override void LoadContent(ContentManager content)
+    {
+        _texture = content.Load<Texture2D>("ColliderLeft");
+    }
+
+    public override bool ProcessCollisions(Player player, GameTime gameTime)
+    {
+        if (!BoundingBox.Intersects(player.BoundingBox)) return false;
+
+        if (player.Velocity.X > 0)
+        {
+            player.MoveHorizontally(0);
+            return true;
+        }
+        return false;
+    }
+}
+
+public class RightCollider : Collider
+{
+    public RightCollider(Vector2 position, Vector2 dimensions)
+        : base(position, dimensions) { }
+
+    public override void LoadContent(ContentManager content)
+    {
+        _texture = content.Load<Texture2D>("ColliderRight");
+    }
+
+    public override bool ProcessCollisions(Player player, GameTime gameTime)
+    {
+        if (!BoundingBox.Intersects(player.BoundingBox)) return false;
+
+        if (player.Velocity.X < 0)
+        {
+            player.MoveHorizontally(0);
+            return true;
+        }
+        return false;
+    }
+}
+#endregion

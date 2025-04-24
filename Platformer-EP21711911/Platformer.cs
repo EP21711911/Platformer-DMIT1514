@@ -37,15 +37,16 @@ public class Platformer : Game
 
         _gameBoundingBox = new Rectangle(0, 0, _WindowWidth, _WindowHeight);
         _player = new Player(new Vector2(200, 50), _gameBoundingBox);
-        _ground = new Collider(new Vector2(0, 320), new Vector2(_WindowWidth, 1), Collider.ColliderType.Top);
+        _ground = new TopCollider(new Vector2(0, 320), new Vector2(_WindowWidth, 1));
+        // _ground = new Collider(new Vector2(0, 320), new Vector2(_WindowWidth, 1), Collider.ColliderType.Top);
 
         _platforms = new List<Platform>
         {
-            new Platform(new Vector2(200, 200), new Vector2(50, 25), ""),
-            new Platform(new Vector2(150, 150), new Vector2(50, 25), ""),
-            new Platform(new Vector2(250, 200), new Vector2(50, 25), ""),
-            new Platform(new Vector2(350, 250), new Vector2(50, 25), ""),
-            new Platform(new Vector2(450, 300), new Vector2(50, 25), "")
+            new Platform(new Vector2(200, 200), new Vector2(50, 25), "Gold"),
+            new Platform(new Vector2(150, 150), new Vector2(50, 25), "Gold"),
+            new Platform(new Vector2(250, 200), new Vector2(50, 25), "Gold"),
+            new Platform(new Vector2(350, 250), new Vector2(50, 25), "Gold"),
+            new Platform(new Vector2(450, 300), new Vector2(50, 25), "Gold")
         };
 
         base.Initialize();
@@ -100,7 +101,7 @@ public class Platformer : Game
         }
 
         _player.Update(gameTime);
-        _ground.ProcessCollision(_player, gameTime);
+        _ground.ProcessCollisions(_player, gameTime);
         foreach (var platform in _platforms)
             platform.ProcessCollisions(_player, gameTime);
 
@@ -118,7 +119,7 @@ public class Platformer : Game
         foreach (var platform in _platforms)
             platform.Draw(_spriteBatch);
 
-        _ground.Draw(_spriteBatch);
+        // _ground.Draw(_spriteBatch);
         _player.Draw(_spriteBatch);
 
         _spriteBatch.End();

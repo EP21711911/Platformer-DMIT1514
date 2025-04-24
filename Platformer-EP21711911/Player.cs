@@ -28,9 +28,6 @@ private const int _Speed = 150, _JumpForce = -100;
             return new Rectangle((int)_position.X, (int)_position.Y, (int)_dimensions.X, (int)_dimensions.Y);
         }
     }
-
-    
-
     public Player(Vector2 position, Rectangle gameBoundingBox)
     {
         _position = position;

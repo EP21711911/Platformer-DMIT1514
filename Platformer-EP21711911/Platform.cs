@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -10,35 +11,52 @@ public class Platform
     private Texture2D _texture;
     private string _textureName;
     private Vector2 _position, _dimensions;
-    private Collider _colliderTop, _colliderRight, _colliderBottom, _colliderLeft;
+    private List<Collider> _colliders;
 
     public Platform(Vector2 position, Vector2 dimensions, string textureName)
     {
+        _position = position;
+        _dimensions = dimensions;
         _textureName = textureName;
-        _colliderTop = new Collider(new Vector2(position.X + 3, position.Y), new Vector2(dimensions.X - 6, 1), Collider.ColliderType.Top);
-        _colliderRight = new Collider(new Vector2(position.X + dimensions.X - 1, position.Y + 1), new Vector2(1, dimensions.Y - 2), Collider.ColliderType.Right);
-        _colliderBottom = new Collider(new Vector2(position.X + 3, position.Y + dimensions.Y), new Vector2(dimensions.X - 6, 1), Collider.ColliderType.Bottom);
-        _colliderLeft = new Collider(new Vector2(position.X + 1, position.Y + 1), new Vector2(1, dimensions.Y - 2), Collider.ColliderType.Left);
+
+        _colliders = new List<Collider>
+        {
+            new TopCollider(new Vector2(position.X + 3, position.Y), new Vector2(dimensions.X - 6, 1)),
+            new RightCollider(new Vector2(position.X + dimensions.X - 1, position.Y + 1), new Vector2(1, dimensions.Y - 2)),
+            new BottomCollider(new Vector2(position.X + 3, position.Y + dimensions.Y), new Vector2(dimensions.X - 6, 1)),
+            new LeftCollider(new Vector2(position.X + 1, position.Y + 1), new Vector2(1, dimensions.Y - 2))
+        };
     }
+
     internal void LoadContent(ContentManager content)
     {
-        _colliderTop.LoadContent(content);
-        _colliderRight.LoadContent(content);
-        _colliderBottom.LoadContent(content);
-        _colliderLeft.LoadContent(content);
+        if (!string.IsNullOrEmpty(_textureName))
+    {
+        _texture = content.Load<Texture2D>(_textureName);
     }
+        foreach (Collider collider in _colliders)
+        {
+            collider.LoadContent(content);
+        }
+    }
+
     internal void Draw(SpriteBatch spriteBatch)
     {
-        _colliderTop.Draw(spriteBatch);
-        _colliderRight.Draw(spriteBatch);
-        _colliderBottom.Draw(spriteBatch);
-        _colliderLeft.Draw(spriteBatch);
+        if (_texture != null)
+    {
+        spriteBatch.Draw(_texture, new Rectangle((int)_position.X, (int)_position.Y, (int)_dimensions.X, (int)_dimensions.Y), Color.White);
     }
+        // foreach (Collider collider in _colliders)
+        // {
+        //     collider.Draw(spriteBatch);
+        // }
+    }
+
     internal void ProcessCollisions(Player player, GameTime gameTime)
     {
-        _colliderTop.ProcessCollision(player, gameTime);
-        _colliderRight.ProcessCollision(player, gameTime);
-        _colliderBottom.ProcessCollision(player, gameTime);
-        _colliderLeft.ProcessCollision(player, gameTime);
+        foreach (Collider collider in _colliders)
+        {
+            collider.ProcessCollisions(player, gameTime);
+        }
     }
 }
