@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>c:/Users/yazid/GITHUB/Animation/Animation/Content/soundscrate-animal-dog.mp3</File>
+    <File>c:/Users/yazid/GITHUB/Animation/Animation/Content/Holy_Mission.mp3</File>
+  </SourceFiles>
+  <DestFiles>
+    <File>barkAttack.mp3</File>
+    <File>holyMission.mp3</File>
+    <File>BarkSFX.mp3</File>
+  </DestFiles>
+</SourceFileCollection>

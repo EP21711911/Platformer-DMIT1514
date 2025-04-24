@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"c:/Users/yazid/GITHUB/Animation/Animation/Content/Holy_Mission.mp3","c:/Users/yazid/GITHUB/Animation/Animation/Content/bin/DesktopGL/holyMission.xnb","SongProcessor","SongContent",5887359,129,1.5320157
+"c:/Users/yazid/GITHUB/Animation/Animation/Content/soundscrate-animal-dog.mp3","c:/Users/yazid/GITHUB/Animation/Animation/Content/bin/DesktopGL/barkAttack.xnb","SoundEffectProcessor","SoundEffectContent",4824,46373,0.2063354
